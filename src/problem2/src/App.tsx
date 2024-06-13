@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { CurrencyPage } from './features/currency/pages/CurrencyPage';
+
+const queryClient = new QueryClient();
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>blank</>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <CurrencyPage />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
