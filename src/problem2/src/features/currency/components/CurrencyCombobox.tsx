@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Currency } from '../types';
 import { Combobox } from '@/src/components';
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
@@ -72,6 +72,7 @@ export function CurrencyCombobox<T extends FieldValues>({
               renderOptionDisplayValue={(data) => renderWithFlag(data)}
               className={className}
               inputClassName={cn('h-[4rem]', inputClassName)}
+              disabled={disabled}
             />
           );
         }}

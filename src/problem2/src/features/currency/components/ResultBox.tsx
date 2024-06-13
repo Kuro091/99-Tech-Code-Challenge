@@ -29,14 +29,10 @@ export const ResultBox = ({ fromCurrency, toCurrency, result }: ResultBoxProps) 
         <div className='flex-1'>
           <span className='font-extrabold'>{renderWithFlag(fromCurrency)}</span>From{' '}
           {fromCurrency.currency} with its price of{' '}
-          <span className='font-extrabold'>
-            {formatCurrency(fromCurrency.price || 0, fromCurrency.currency)}
-          </span>
+          <span className='font-extrabold'>{formatCurrency(fromCurrency.price || 0)}</span>
           <span className='font-extrabold'>{renderWithFlag(toCurrency)}</span>From{' '}
           {toCurrency.currency} with its price of{' '}
-          <span className='font-extrabold'>
-            {formatCurrency(toCurrency.price || 0, toCurrency.currency)}
-          </span>
+          <span className='font-extrabold'>{formatCurrency(toCurrency.price || 0)}</span>
         </div>
 
         <div className='flex-1 flex items-center justify-between text-3xl p-3 mt-5 border-4 border-white'>

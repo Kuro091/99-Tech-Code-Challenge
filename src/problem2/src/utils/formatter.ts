@@ -9,7 +9,7 @@ export const formatNumber = (value: string) => {
   return formmatted.slice(0, 20);
 };
 
-export const formatCurrency = (value: number, currency: string) => {
+export const formatCurrency = (value: number) => {
   const currencyFormatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",

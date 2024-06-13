@@ -2,7 +2,6 @@ import { Currency } from '../types';
 import { useForm } from 'react-hook-form';
 import { CurrencyCombobox } from './CurrencyCombobox';
 import { CurrencyInput } from './CurrencyInput';
-import Input from '@/src/components/Input';
 import { formatNumber } from '@/src/utils/formatter';
 import { ArrowsRightLeftIcon } from '@heroicons/react/20/solid';
 import { AnimatedButton } from '@/src/components/Button';

@@ -1,6 +1,5 @@
 import { Description, Field, Input as BaseInput, Label } from '@headlessui/react';
 import { cn } from '../utils/cn';
-import { PropsWithChildren } from 'react';
 
 interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   label?: string;

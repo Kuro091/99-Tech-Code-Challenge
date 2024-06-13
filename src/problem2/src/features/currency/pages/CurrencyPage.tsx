@@ -4,7 +4,6 @@ import { useCurrency } from '../hooks/useCurrency';
 import { ResultBox } from '../components/ResultBox';
 import { useState } from 'react';
 import { Currency } from '../types';
-import Input from '@/src/components/Input';
 import { AnimatedButton } from '@/src/components/Button';
 import { cn } from '@/src/utils/cn';
 
@@ -29,7 +28,11 @@ export const CurrencyPage = () => {
     const { amount, fromCurrency, toCurrency } = values;
     setFromCurrency(fromCurrency);
     setToCurrency(toCurrency);
-    const result = convertCurrency(amount, fromCurrency.currency, toCurrency.currency);
+    const result = convertCurrency(
+      amount,
+      fromCurrency?.currency || '',
+      toCurrency?.currency || ''
+    );
     setResult(result);
     setAmount(amount);
   };
