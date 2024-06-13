@@ -39,7 +39,7 @@ export const ResultBox = ({ fromCurrency, toCurrency, result }: ResultBoxProps) 
           </span>
         </div>
 
-        <div className='flex-1 flex items-center text-4xl p-3 mt-5 border-4 border-white'>
+        <div className='flex-1 flex items-center justify-between text-3xl p-3 mt-5 border-4 border-white'>
           Converted result: <span className='font-extrabold ml-2'>{result}</span>
         </div>
       </div>

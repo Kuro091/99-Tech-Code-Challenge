@@ -22,7 +22,6 @@ export const useCurrency = () => {
       "currencyData",
       async () => {
         const { data } = await getCurrencyData();
-        console.log("data", data);
         return data;
       },
       {
@@ -59,10 +58,6 @@ export const useCurrency = () => {
     if (!fromPrice || !toPrice) {
       throw new Error("Currency data not available for conversion");
     }
-
-    console.log("amount", amount);
-    console.log("fromPrice", fromPrice);
-    console.log("toPrice", toPrice);
 
     const baseAmount = amount / fromPrice; // Convert amount to a "base" currency equivalent
     return baseAmount * toPrice; // Convert the "base" currency amount to the target currency

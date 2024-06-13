@@ -9,8 +9,8 @@ import { AnimatedButton } from '@/src/components/Button';
 
 export interface FormValues {
   amount: number;
-  fromCurrency: Currency;
-  toCurrency: Currency;
+  fromCurrency: Currency | null;
+  toCurrency: Currency | null;
 }
 
 interface CurrencyFormProps {
@@ -36,8 +36,8 @@ export const CurrencyForm = ({
   } = useForm<FormValues>({
     values: {
       amount: 0,
-      fromCurrency: currencyData[0],
-      toCurrency: currencyData[1],
+      fromCurrency: null,
+      toCurrency: null,
     },
   });
 
