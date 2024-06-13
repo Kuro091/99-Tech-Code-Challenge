@@ -1,0 +1,29 @@
+
+[Minor typescript thing]
+- React.FC is redundant and not recommended anymore.
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/
+https://github.com/facebook/create-react-app/pull/8177
+- I'm not sure what BoxProps refers to, but I can see the "children" prop being destructured from it. Then at the very least it should extends the default HTMLDivElement props. Using PropsWithChildren<CustomProps> would be best.
+- hooks useWalletBalances() and usePrices() (not defined in the file)
+  balances, prices are exported from different files. 
+  Makes it hard to test and maintain.
+
+
+[Major]
+- getPriority is a pure function that takes a string and returns a number. 
+  + It should not live within the component's lifecycle. Either export it from another file or useCallback around it.
+  + is called multiple times for the same balance. A map could be used to store the results and avoid recalculating it.
+
+- sortedBalances:
+  + no reference of lhsPriority anywhere in the code
+  + WalletBalance is missing the blockchain property
+  + sorted should be separated
+  + prices is not used in the function, yet being included in the dependency array
+
+- formattedBalances 
+  + is computed but never used
+  + map creates a new array, so the "formatted" property was never changed
+
+- WalletRow
+  + Using index can lead to inefficient DOM update behaviors. React uses this to determine which element to update, and the index is not a stable identifier. If the order of the elements changes, React will have to re-render all of them.
+
