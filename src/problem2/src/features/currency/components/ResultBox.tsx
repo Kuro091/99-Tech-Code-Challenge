@@ -25,7 +25,7 @@ export const ResultBox = ({ fromCurrency, toCurrency, result }: ResultBoxProps) 
 
   return (
     <div className='w-full bg-orange-900 p-10'>
-      <div className='flex'>
+      <div className='flex md:flex-row flex-col'>
         <div className='flex-1'>
           <span className='font-extrabold'>{renderWithFlag(fromCurrency)}</span>From{' '}
           {fromCurrency.currency} with its price of{' '}
@@ -39,7 +39,7 @@ export const ResultBox = ({ fromCurrency, toCurrency, result }: ResultBoxProps) 
           </span>
         </div>
 
-        <div className='flex-1 flex items-center text-4xl'>
+        <div className='flex-1 flex items-center text-4xl p-3 mt-5 border-4 border-white'>
           Converted result: <span className='font-extrabold ml-2'>{result}</span>
         </div>
       </div>

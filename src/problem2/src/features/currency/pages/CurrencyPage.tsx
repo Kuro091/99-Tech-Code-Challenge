@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Currency } from '../types';
 import Input from '@/src/components/Input';
 import { AnimatedButton } from '@/src/components/Button';
+import { cn } from '@/src/utils/cn';
 
 export const CurrencyPage = () => {
   const {
@@ -70,10 +71,14 @@ export const CurrencyPage = () => {
       </div>
       <CurrencyForm currencyData={currencyData} onSubmit={handleFormSubmit}></CurrencyForm>
 
-      <div className='absolute bottom-0 right-0 p-2'>
+      <div
+        className={cn('absolute backdrop-blur-xl h-screen w-screen', {
+          hidden: !isFetching,
+        })}
+      >
         {isLoading && <span>Loading...</span>}
         {isFetching && (
-          <div className='flex flex-col items-center'>
+          <div className='flex flex-col items-center absolute bottom-0 right-0 p-2'>
             <LoadingSpinner />
             <span>Fetching...</span>
             (This is artifically slowed down to show the loading spinner)
